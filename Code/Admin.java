@@ -12,17 +12,19 @@ public class Admin extends User {
 	//private String 
 	//private boolean login;
 	
+
+	
 	
 	static ArrayList<String> service=new ArrayList<String>();
 	static ArrayList<String> price=new ArrayList<String>();
 	
 
-	Admin() {
+	public Admin() {
 		super();
 		setType(0);
 	}
 
-	Admin(String id, String nme ,String pass, String phne, String adres) {
+	public Admin(String id, String nme ,String pass, String phne, String adres) {
 		super(id,nme,pass,phne,adres);
 		setType(0);
 		
@@ -46,7 +48,7 @@ public class Admin extends User {
 	}	
 	
 	public boolean checkLogin(String u) {
-		// TODO Auto-generated method stub
+
 		for(int i=0;i<admn.size();i++)
 		{
 			if(admn.get(i).getName().equalsIgnoreCase(u))
@@ -55,13 +57,24 @@ public class Admin extends User {
 		return false;
 	}
 	
-	public static void addService(String serv) {
-	service.add(serv);
-	}
-	
-	public static void addPrice(String pric) {
-		price.add(pric);
-		}
+	public static void addServNDPric(String serv,String pric) {
+		for (int i=0;i<service.size();i++) 
+			if(serv.equals(service.get(i)))
+				System.out.printf("service already exists");
+			else {
+	           service.add(serv);
+	           price.add(pric);
+	           }
 		
+			
+	}
+	public boolean foundServ(String ser) {
+	for (int i=0;i<service.size();i++) {
+		if(ser.equals(service.get(i)))
+			return true;
+	}
+	     return false;	
+	
+	}	
 	}
 	
