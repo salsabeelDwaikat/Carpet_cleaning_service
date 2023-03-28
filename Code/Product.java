@@ -9,11 +9,9 @@ public class Product {
 	private String height;
 	private String width;
 	private String specialTreat;
-	private String handlingStatus;
 
 	
 	Product prod=new Product();
-	//ArrayList<Product> productList = new ArrayList<Product>();
 	
 	public Product() {
 		
@@ -23,7 +21,6 @@ public class Product {
 		this.prodMat=pMat;
 		this.height=h;
 		this.width=w;
-		this.handlingStatus="waiting";
 		//this.specialTreat=st;
 	}
 
@@ -76,16 +73,9 @@ public class Product {
 	public void setSpecialTreat(String specialTreat) {
 		this.specialTreat = specialTreat;
 	}
-	public String getHandlingStatus() {
-		return handlingStatus;
-	}
-	public void setHandlingStatus(String handlingStatus) {
-		this.handlingStatus = handlingStatus;
-	}
 
 
-
-}
+	
 	
 
-
+}
