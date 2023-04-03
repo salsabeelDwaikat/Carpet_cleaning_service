@@ -1,6 +1,6 @@
 package Code;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 //import java.util.ArrayList;
 
@@ -12,16 +12,22 @@ public class Admin extends User {
 	//private String 
 	//private boolean login;
 	
+	/*|Steam Cleaning|50|
+|stain removal|100|
+|children safe cleaning|250|*/
 
-	
-	
-	static ArrayList<String> service=new ArrayList<String>();
-	static ArrayList<String> price=new ArrayList<String>();
-	
 
 	public Admin() {
 		super();
 		setType(0);
+		Adminservice.service.add("Steam Cleaning");
+		Adminservice.service.add("Stain removal");
+		Adminservice.service.add("Children safe cleaning");
+		Adminservice.price.add("50");
+		Adminservice.price.add("100");
+		Adminservice.price.add("250");
+		
+		
 	}
 
 	public Admin(String id, String nme ,String pass, String phne, String adres) {
@@ -29,52 +35,9 @@ public class Admin extends User {
 		setType(0);
 		
 	}
-	private ArrayList<Admin> admn=new ArrayList<Admin>();
-
-	public static ArrayList<String> getService() {
-		return service;
+   private void useless() {
+		System.out.print("hi");
 	}
 
-	public static void setService(ArrayList<String> service) {
-		Admin.service = service;
+	//run code 
 	}
-
-	public static ArrayList<String> getPrice() {
-		return price;
-	}
-
-	public static void setPrice(ArrayList<String> price) {
-		Admin.price = price;
-	}	
-	
-	public boolean checkLogin(String u) {
-
-		for(int i=0;i<admn.size();i++)
-		{
-			if(admn.get(i).getName().equalsIgnoreCase(u))
-				return true;
-		}
-		return false;
-	}
-	
-	public static void addServNDPric(String serv,String pric) {
-		for (int i=0;i<service.size();i++) 
-			if(serv.equals(service.get(i)))
-				System.out.printf("service already exists");
-			else {
-	           service.add(serv);
-	           price.add(pric);
-	           }
-		
-			
-	}
-	public boolean foundServ(String ser) {
-	for (int i=0;i<service.size();i++) {
-		if(ser.equals(service.get(i)))
-			return true;
-	}
-	     return false;	
-	
-	}	
-	}
-	
