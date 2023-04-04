@@ -20,13 +20,6 @@ public class Admin extends User {
 	public Admin() {
 		super();
 		setType(0);
-		Adminservice.service.add("Steam Cleaning");
-		Adminservice.service.add("Stain removal");
-		Adminservice.service.add("Children safe cleaning");
-		Adminservice.price.add("50");
-		Adminservice.price.add("100");
-		Adminservice.price.add("250");
-		
 		
 	}
 
@@ -35,9 +28,9 @@ public class Admin extends User {
 		setType(0);
 		
 	}
-   private void useless() {
+   /*private void useless() {
 		System.out.print("hi");
 	}
-
+*/
 	//run code 
 	}

@@ -59,4 +59,11 @@ public class Product {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Product [prodType=" + prodType + ", prodMat=" + prodMat + ", height=" + height + ", width=" + width
+				+ ", specialTreat=" + specialTreat + ", handlingStatus=" + handlingStatus + "]";
+	}
+
+
 }
