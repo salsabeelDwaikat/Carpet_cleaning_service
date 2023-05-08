@@ -9,7 +9,9 @@ public class Adminservice {
 	static ArrayList<String>address= new ArrayList<String>();
 	static ArrayList<String>addPrice= new ArrayList<String>();
 	static private ArrayList<Admin> admn=new ArrayList<Admin>();
-
+    static boolean valbol;
+	
+	
     public static void AddLocationNdPrice() {
     	address.add("Nablus aldwar");
     	address.add("Nablus,25th street");
@@ -45,10 +47,12 @@ public class Adminservice {
 	}
 
 	public static void addServNDPric(String serv,String pric) {
-		for (int i=0;i<service.size();i++) 
-			if(serv.equalsIgnoreCase(service.get(i)))
-				System.out.printf("service already exists");
+		valbol=foundServ(serv);
+		
+			if(valbol)
+				System.out.printf("service already exists, cannot be added");
 			else {
+				
 	           service.add(serv);
 	           price.add(pric);
 	           }

@@ -53,20 +53,24 @@ public class CustomerService {
 	
 	public static boolean UserList(String username, String type, String special) {
 		int y=customerInt(username);
+		if(y>-1) {
 				for(int k=0;k<customs.get(y).List.size();k++) {
+					
 					if(customs.get(y).List.get(k).getProdType().equalsIgnoreCase(type)) {
 						
-						if(customs.get(0).List.get(k).getSpecialTreat().equalsIgnoreCase(special)) 
+						if(customs.get(y).List.get(k).getSpecialTreat().equalsIgnoreCase(special)) 
 							return false;
 
 						}
 				}
+	}
+				
       return true;
 	}
 	
 	
 	public static int customerInt(String username) {
-int x = 0;
+int x = -1;
 
 		for(int i=0;i<customs.size();i++) 
 			if(customs.get(i).getName().equalsIgnoreCase(username)) {
@@ -103,6 +107,23 @@ int x = 0;
 	   int y = customerInt(username);
 	   return customs.get(y).List;
    }
+   
+   public static void updateCustomsList(String username) {
+	   int usr=customerInt(username);
+	   ArrayList<Product> tempo= new ArrayList<Product>();
+	   tempo=Product.updatedListReturn();
+	   customs.get(usr).List.addAll(tempo);
+   }
 
+public static boolean customerfound(String username) {
+	
+	int y = customerInt(username);
+	if(y>-1) {
+		return true;
+	}
+	return false;
+}
+   
+   
 }
 
